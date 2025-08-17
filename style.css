@@ -1,11 +1,10 @@
 body {
   font-family: Arial, sans-serif;
-  background: white;
+  background: rgba(255, 255, 255, 0.601);
   padding: 2rem;
   display: flex;
   justify-content: center;
 }
-
 .todo-container {
   background: #fbffda;
   padding: 2rem;
@@ -13,7 +12,24 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 400px;
+  animation: glowBlink 1.5s infinite alternate;
 }
+
+@keyframes glowBlink {
+  0% {
+    box-shadow: 0 0 5px #13001300, 0 0 10px #1c001b;
+    border: 2px solid #1c001b;
+  }
+  50% {
+    box-shadow: 0 0 20px #1c001b, 0 0 40px #1c001b;
+    border: 2px solid #13001300; /* brighter glow mid-blink */
+  }
+  100% {
+    box-shadow: 0 0 5px #1c001b, 0 0 10px #1c001b;
+    border: 2px solid #1c001b;
+  }
+}
+
 
 h2 {
   text-align: center;
@@ -52,7 +68,6 @@ li {
   align-items: center;
   border-radius: 5px;
 }
-
 .remove-btn {
   background: #ff041d;
   border: none;
@@ -60,4 +75,12 @@ li {
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 0 8px #ff041d, 0 0 15px #ff041d; /* glow */
+  transition: 0.3s ease-in-out;
 }
+
+.remove-btn:hover {
+  box-shadow: 0 0 12px #ff041d, 0 0 25px #ff041d, 0 0 40px #ff041d; /* stronger glow on hover */
+}
+
+
