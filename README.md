@@ -1,4 +1,4 @@
-# Todo List
+# Todo List - website
 
 A simple and responsive web app to add, manage, and delete daily tasks with ease.
 
